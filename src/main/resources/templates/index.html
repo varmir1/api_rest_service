@@ -1,53 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:webjars="http://www.webjars.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frases de Kanye West</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .quote-container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 90%;
-        }
-        .quote-text {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 2rem;
-        }
-        .kanye-image {
-            width: 200px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-            border: 4px solid #007bff;
-        }
-    </style>
+    <link th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light min-vh-100 d-flex align-items-center justify-content-center">
     <div class="container">
-        <div class="quote-container text-center">
+        <div class="bg-white p-4 rounded shadow text-center mx-auto" style="max-width: 600px;">
             <img src="https://s.yimg.com/ny/api/res/1.2/iPGv3r6Qtxy1_oi2HOaliA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTE0NjY-/https://media.zenfs.com/en/buzzfeed_articles_778/8493389407c7861b747731c0e5b885aa" 
                  alt="Kanye West" 
-                 class="kanye-image">
-            <h1 class="mb-4">Absurd phrases of Kanye West</h1>
-            <div class="quote-text" th:text="${quote.quote}">
+                 class="rounded mb-4 border border-primary border-4" 
+                 style="width: 200px;">
+            <h1 class="mb-4">Absurd Phrases of Kanye West</h1>
+            <div class="fs-3 text-dark mb-4" th:text="${quote.quote}">
                 Loading phrases...
             </div>
             <a href="/" class="btn btn-primary">New Phrases</a>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html> 
